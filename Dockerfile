@@ -19,7 +19,7 @@ COPY bookstack.conf /etc/apache2/sites-available/
 RUN usermod -d /var/lib/mysql/ mysql 
 RUN etc/init.d/mysql start &&\
 	mysql -u root --execute="CREATE DATABASE bookstack;" && \
-	mysql -u root --execute="CREATE USER 'bookstack'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Uveraf05';" &&\
+	mysql -u root --execute="CREATE USER 'bookstack'@'localhost' IDENTIFIED WITH mysql_native_password BY '*****';" &&\
 	mysql -u root -pUveraf05 bookstack < /var/lib/mysql/mdump.sql
 
 RUN service mysql start 
